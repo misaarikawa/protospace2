@@ -1,0 +1,7 @@
+-if @user.errors.any?
+  .id="error_explanation"
+  %h2 @user.errors.count 件のエラーがあります。
+
+  %ul
+  = @user.errors.full_messages.each do |msg|
+    %li msg

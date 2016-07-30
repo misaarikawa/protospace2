@@ -1,16 +1,19 @@
 .container
-  %form.form-signin
+  =form_for(resource,as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f|
+    = devise_error_messages!
     %h2.form-signin-heading Please sign in
-    %label.sr-only{for: "inputEmail"} Email address
-    %input#inputEmail.form-control{autofocus: "", placeholder: "Email address", required: "", type: "email"}/
-    %label.sr-only{for: "inputPassword"} Password
-    %input#inputPassword.form-control{placeholder: "Password", required: "", type: "password"}/
+    .field
+    =f.email_field :email, autofocus: "autofocus", placeholder: "Email address", type: "email", value: ""
+    .field
+    =f.password_field :password, autocomplete: "off", placeholder: "Password", type: "password"
     .checkbox
       %label
-        %input{type: "checkbox", value: "remember-me"}/
+        %input{name: "user[remember_me]", type: "hidden", value: "0"}/
+        %input#user_remember_me{name: "user[remember_me]", type: "checkbox", value: "1"}/
         Remember me
-    %button.btn.btn-lg.btn-primary.btn-block{type: "submit"} Sign in
+    .actions
+    %input.btn.btn-lg.btn-primary.btn-block{name: "commit", type: "submit", value: "Sign in"}/
   .text-center
     %p
       Not a member?
-      %a{href: "/users/sign_in"} Sign up now
+      %a{href: "/users/sign_up", target: "_self"} Sign up now
