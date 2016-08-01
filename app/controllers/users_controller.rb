@@ -1,32 +1,30 @@
 class UsersController < ApplicationController
 
+  before_action :user_info, :authenticate_user!, exept: :show
+
   def show
-    @name = current_user.name
-    @user = User.find(params[:id])
+     
   end
 
   def edit
-    @user = User.find(params[:id])
+
   end
 
   def update
-    @user = User.find(params[:id])
-    if 
-      current_user.update(update_params)
-      redirect_to action: :show, notice: 'マイページを更新しました'
+    if current_user.update(user_params)
+       redirect_to action: :show, notice: 'マイページを更新しました'
     else
-      render 'edit'
+       render 'edit'
     end
   end
 
   private
-  def update_params
-    params.require(:user).permit(:name, :description, :image, :email, :profile, :member_of, :works)
+  def user_info
+    @user = User.find(params[:id])
   end
 
-  private
   def user_params
-    params.require(:user).permit(:name, :description, :image)
+    params.require(:user).permit(:name, :description, :image, :email, :profile, :member_of, :works)
   end
   
 end
