@@ -15,22 +15,22 @@
                 %img#user_avatar.media-objectt{alt: "64x64", "data-holder-rendered" => "true", "data-src" => "holder.js/64x64", src: "", style: "display:none; width:100%; height:100%;"}/
                 %button.btn.btn-primary Add image
                 =f.file_field :image
-            =f.email_field :email, autofocus: "autofocus", placeholder: "E-Mail", type: "email", value: "", class: "user-email"
+            = f.email_field :email, autofocus: "autofocus", placeholder: "E-Mail", type: "email", value: "", class: "user-email"
             / %br/
-            =f.password_field :password, autocomplete: "off", placeholder: "Password", type: "password", class: "user-password"
+            = f.password_field :password, autocomplete: "off", placeholder: "Password", type: "password", class: "user-password"
           .col-md-12
             %h4 Member of
             .user-user-member.row
               .user-name.col-md-12
-                =f.text_field :member_of, autofocus: "autofocus", placeholder: "Member", type: "text"
+                = f.text_field :member_of, autofocus: "autofocus", placeholder: "Member", type: "text"
             %h4 Profile
             .user-user-profile.row
               .user-name.col-md-12
-                =f.text_field :profile, cols: "30", placeholder: "Profile", rows: "4"
+                = f.text_field :profile, cols: "30", placeholder: "Profile", rows: "4"
             %h4 Works
             .user-name_image.row
               .user-name.col-md-12
-                =f.text_field :works, cols: "30", placeholder: "Works", rows: "4"
+                = f.text_field :works, cols: "30", placeholder: "Works", rows: "4"
         .row.text-center.user-btn
           .actions
-            =f.submit "Save", name: "commit", class: "btn btn-lg btn-primary btn-block"
+            = f.submit "Save", name: "commit", class: "btn btn-lg btn-primary btn-block"

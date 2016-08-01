@@ -1,11 +1,11 @@
 .container
-  =form_for(resource,as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f|
+  = form_for(resource,as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f|
     = devise_error_messages!
     %h2.form-signin-heading Please sign in
     .field
-    =f.email_field :email, autofocus: "autofocus", placeholder: "Email address", type: "email", value: ""
+    = f.email_field :email, autofocus: "autofocus", placeholder: "Email address", type: "email", value: ""
     .field
-    =f.password_field :password, autocomplete: "off", placeholder: "Password", type: "password"
+    = f.password_field :password, autocomplete: "off", placeholder: "Password", type: "password"
     .checkbox
       %label
         %input{name: "user[remember_me]", type: "hidden", value: "0"}/

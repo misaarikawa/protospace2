@@ -1,5 +1,5 @@
 .container.user-new 
-  =form_for current_user do |f|
+  = form_for current_user do |f|
     = render '/devise/shared/error_messages' 
     .col-md-8.col-md-offset-2
       %header.row.user-nav.row
@@ -7,12 +7,12 @@
           %h2 Edit Profile
           .user-name_image.row
             .user-name.col-md-10
-              =f.text_field :name, type: "text", placeholder: "Username"
+              = f.text_field :name, type: "text", placeholder: "Username"
             .user-image.col-md-2{style: 'background-image: url(http://泣ける動画.com/wp-content/uploads/2015/01/t0205-01.jpg);'}
               %button.btn.btn-primary Change image
               %input{type: "file"}/
-          =f.text_field :email, type: "email", placeholder: "E-Mail", class: "user-email"
-          =f.password_field :password, type: "password", placeholder: "password"
+          = f.text_field :email, type: "email", placeholder: "E-Mail", class: "user-email"
+          = f.password_field :password, type: "password", placeholder: "password"
         .col-md-12
           %h4 Member of
           .user-user-member.row
@@ -21,10 +21,10 @@
           %h4 Profile
           .user-user-profile.row
             .user-name.col-md-12
-              =f.text_field :profile, cols: "30", rows: "4", placeholder: "Profile"
+              = f.text_field :profile, cols: "30", rows: "4", placeholder: "Profile"
           %h4 Works
           .user-name_image.row
             .user-name.col-md-12
-              =f.text_field :works, cols: "30", rows: "4", placeholder: "Works"
+              = f.text_field :works, cols: "30", rows: "4", placeholder: "Works"
       .row.text-center.user-btn
-        =f.submit "Save", class: "btn btn-lg btn-primary btn-block"
+        = f.submit "Save", class: "btn btn-lg btn-primary btn-block"
