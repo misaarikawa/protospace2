@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-       redirect_to action: :show, notice: 'マイページを更新しました'
+       redirect_to action: :show, notice: 'ユーザー情報を変更しました'
     else
        render 'edit'
     end
