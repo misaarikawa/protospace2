@@ -1,25 +1,24 @@
 class UsersController < ApplicationController
 
-  before_action :user_info, :authenticate_user!, exept: :show
+  before_action :set_user, exept: :edit
+  before_action :authenticate_user!, exept: :show
 
   def show
-     
   end
 
   def edit
-
   end
 
   def update
     if current_user.update(user_params)
-       redirect_to action: :show, notice: 'ユーザー情報を変更しました'
+       redirect_to action: :show, notice: 'ユーザー情報を更新しました'
     else
        render 'edit'
     end
   end
 
   private
-  def user_info
+  def set_user
     @user = User.find(params[:id])
   end
 
