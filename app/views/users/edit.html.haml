@@ -1,6 +1,13 @@
 .container.user-new 
-  = form_for current_user do |f|
-    = render '/devise/shared/error_messages' 
+  = form_for current_user do |f| 
+    - if current_user.errors.any?
+      #error_explanation
+        %h2
+          = current_user.errors.count
+          件のエラーがあります。
+        %ul
+          - current_user.errors.full_messages.each do |msg|
+            %li= msg
     .col-md-8.col-md-offset-2
       %header.row.user-nav.row
         .col-md-12
