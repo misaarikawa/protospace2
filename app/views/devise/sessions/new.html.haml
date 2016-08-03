@@ -1,0 +1,19 @@
+.container
+  = form_for(resource,as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f|
+    = devise_error_messages!
+    %h2.form-signin-heading Please sign in
+    .field
+    = f.email_field :email, autofocus: "autofocus", placeholder: "Email address", type: "email", value: ""
+    .field
+    = f.password_field :password, autocomplete: "off", placeholder: "Password", type: "password"
+    .checkbox
+      %label
+        %input{name: "user[remember_me]", type: "hidden", value: "0"}/
+        %input#user_remember_me{name: "user[remember_me]", type: "checkbox", value: "1"}/
+        Remember me
+    .actions
+    %input.btn.btn-lg.btn-primary.btn-block{name: "commit", type: "submit", value: "Sign in"}/
+  .text-center
+    %p
+      Not a member?
+      %a{href: "/users/sign_up", target: "_self"} Sign up now
