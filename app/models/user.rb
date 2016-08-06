@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :prototypes
   has_many :prototype_images
-  accepts_nested_attributes_for :prototype_images
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
