@@ -3,4 +3,6 @@ class Prototype < ActiveRecord::Base
 	has_many   :prototype_images
 	accepts_nested_attributes_for :prototype_images
 
+	validates :title, presence: true
+
 end
