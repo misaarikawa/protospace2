@@ -15,9 +15,9 @@
           .user-name_image.row
             .user-name.col-md-10
               = f.text_field :name, type: "text", placeholder: "Username"
-            .user-image.col-md-2{style: 'background-image: url(http://泣ける動画.com/wp-content/uploads/2015/01/t0205-01.jpg);'}
+            .user-image.col-md-2
               %button.btn.btn-primary Change image
-              %input{type: "file"}/
+              = f.file_field :image, type: "file"
           = f.text_field :email, type: "email", placeholder: "E-Mail", class: "user-email"
           = f.password_field :password, type: "password", placeholder: "password"
         .col-md-12
