@@ -5,18 +5,23 @@
         .col-md-12
           = f.text_field :title, type: "text", placeholder: "Title"
       .row
+      = f.fields_for :prototype_images do |prototype_images_form|
         .col-md-12
           .cover-image-upload
-            = f.fields_for :prototype_images do |prototype_images_form|
-              = prototype_images_form.file_field :content, type: "file"
+            = prototype_images_form.file_field :content, value: "file"
+            = prototype_images_form.hidden_field :status, value: "main"
         .col-md-12
           %ul.proto-sub-list.list-group
             %li.list-group-item.col-md-4
               .image-upload
-                %input{type: "file"}/
+                = f.fields_for :prototype_images do |prototype_images_form|
+                  = prototype_images_form.file_field :content, value: "file"
+                  = prototype_images_form.hidden_field :status, value: "sub"
             %li.list-group-item.col-md-4
               .image-upload
-                %input{type: "file"}/
+                = f.fields_for :prototype_images do |prototype_images_form|
+                  = prototype_images_form.file_field :content, value: "file"
+                  = prototype_images_form.hidden_field :status, value: "sub"
             %li.list-group-item.col-md-4
               .image-upload-plus
                 %span +
@@ -35,4 +40,4 @@
             .col-md-3
               %input{type: "text", placeholder: "Application"}/
       .row.text-center.proto-btn
-        %button.btn.btn-lg.btn-primary.btn-block{type: "submit"} Publish
+        =f.submit "Publish", class: "btn.btn-lg.btn-primary.btn-block"
