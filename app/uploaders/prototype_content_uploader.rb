@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class ContentUploader < CarrierWave::Uploader::Base
+class PrototypeContentUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
