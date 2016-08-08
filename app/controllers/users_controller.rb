@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def update
     if current_user.update(user_params)
        redirect_to action: :show, notice: 'ユーザー情報を更新しました'
+       sign_in(@user, :bypass => true)
     else
        render 'edit'
     end
