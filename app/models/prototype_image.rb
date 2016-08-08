@@ -2,8 +2,7 @@ class PrototypeImage < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :prototype
 
-	validates_attachment_content_type :content,
-                                      content_type: ["image/jpg","image/jpeg","image/png"]
+	enum status: {main: 10, sub: 20}
 
-	mount_uploader :content, PrototypeImageUploader
+	mount_uploader :content, PrototypeContentUploader
 end
