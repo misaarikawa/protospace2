@@ -1,13 +1,13 @@
 class PrototypesController < ApplicationController
-	before_action :authenticate_user!, only: :new, :create
+	before_action :authenticate_user!, only: [:new, :create]
 	before_action :set_prototype, only: :show
 
-    def index
-      @prototypes = Prototype.all
-    end
+  def index
+    @prototypes = Prototype.all
+  end
 
-    def show	
-    end
+  def show	
+  end
 
 	def new
 	  @prototype = Prototype.new
