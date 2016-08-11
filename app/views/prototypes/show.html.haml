@@ -20,15 +20,15 @@
         %span.num 20
   .row
     .col-md-9
-      = image_tag("sample.png", class: 'img-responsive')
+      = image_tag(@prototype.prototype_images.main[0].content)
     .col-md-3
       %ul.proto-sub-list.list-group
         %li.list-group-item
-          = image_tag("sample.png", class: 'img-responsive')
+          = image_tag(@prototype.prototype_images.sub[0].content, class: 'img-responsive')
         %li.list-group-item
-          = image_tag("sample.png", class: 'img-responsive')
+          = image_tag(@prototype.prototype_images.sub[1].content, class: 'img-responsive')
         %li.list-group-item
-          = image_tag("sample.png", class: 'img-responsive')
+          = image_tag(@prototype.prototype_images.sub[1].content, class: 'img-responsive')
   .row.proto-description
     .col-md-3
       %h4 Catch Copy
