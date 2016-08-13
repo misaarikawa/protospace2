@@ -27,9 +27,10 @@
     .col-sm-4.col-md-3.proto-content
       .thumbnail
         %a{href: ""}
-          = image_tag(prototype.prototype_images.main[0].content)
+          = image_tag(prototype.prototype_images.main[0].content, class: 'img-responsive')
           .caption
-            %h3 Salvation Army on iPad App Wireframe
+            %h3
+            = prototype.title
             .proto-meta
               .proto-date
                 Apr 26
