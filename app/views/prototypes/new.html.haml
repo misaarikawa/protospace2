@@ -25,6 +25,9 @@
             %li.list-group-item.col-md-4
               .image-upload-plus
                 %span +
+                = f.fields_for :prototype_images do |prototype_images_form|
+                  = prototype_images_form.file_field :content, value: "file"
+                  = prototype_images_form.hidden_field :status, value: "sub"
       .row.proto-description
         .col-md-12
           = f.text_field :catch_copy, type: "text", placeholder: "Catch Copy"
