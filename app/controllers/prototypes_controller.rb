@@ -15,7 +15,8 @@ class PrototypesController < ApplicationController
 	end
 
 	def create
-	  if Prototype.create(prototype_params)
+    @prototype = Prototype.new(prototype_params)
+	  if @prototype.save
 	    redirect_to action: :index, notice: '新しいプロトタイプを登録しました'
 	  else
 	    render 'new'
@@ -24,7 +25,7 @@ class PrototypesController < ApplicationController
 
   private
   def prototype_params
-    params.require(:prototype).permit(:title, :catch_copy, :concept, prototype_images_attributes: [:id, :content, :status]).merge(user_id: current_user.id)
+    params.require(:prototype).permit(:title, :catch_copy, :concept, prototype_images_attributes: [:id, :content, :status, :_destroy]).merge(user_id: current_user.id)
   end
 
   def set_prototype
