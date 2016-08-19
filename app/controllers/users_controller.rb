@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    set_user.image.cache! unless set_user.image.blank?
   end
 
   def update
