@@ -18,6 +18,7 @@
             .user-image.col-md-2
               %button.btn.btn-primary Change image
               = f.file_field :image, type: "file"
+              = f.hidden_field :image_cache
           = f.text_field :email, type: "email", placeholder: "E-Mail", class: "user-email"
           = f.password_field :password, type: "password", placeholder: "password"
         .col-md-12
