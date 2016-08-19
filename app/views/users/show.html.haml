@@ -2,7 +2,10 @@
   %header.user-nav
     .media
       .media-left
-        = image_tag @user.image, alt: "64x64", "data-holder-rendered": "true", "data-src": "holder.js/64x64", style: "width: 64px; height: 64px;"
+      - if @user.image
+        = image_tag @user.image.url, alt: "64x64", "data-holder-rendered": "true", "data-src": "holder.js/64x64", style: "width: 64px; height: 64px;"
+      - else
+        = image_tag "noimage.png"
       .media-body
         %h4#top-aligned-media.media-heading
           Top aligned media
