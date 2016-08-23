@@ -27,7 +27,7 @@
     .col-sm-4.col-md-3.proto-content
       .thumbnail
         %a{href: ""}
-          = link_to image_tag(prototype.prototype_images.main[0].content, class: 'img-responsive'), prototype_path(prototype.id)
+          = link_to image_tag(prototype.prototype_images.main[0].content, class: 'img-responsive'), prototype_path(prototype)
           .caption
             %h3
             = link_to "#{prototype.title}", prototype_path(prototype.id)
