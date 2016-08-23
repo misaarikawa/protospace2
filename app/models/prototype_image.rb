@@ -2,7 +2,7 @@ class PrototypeImage < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :prototype
 
-	enum status: {main: 10, sub: 20}
+	enum status: {main: 1, sub: 2}
 
 	validates (:content || :main), presence: true
 
