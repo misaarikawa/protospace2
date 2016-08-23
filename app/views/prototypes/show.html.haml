@@ -8,7 +8,7 @@
           %h4#top-aligned-media.media-heading
             Top aligned media
           .proto-user
-            = link_to current_user.name, user_path
+            = link_to current_user.name, user_path(current_user)
             %span.degree 
             = current_user.profile
             = current_user.works
