@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: :show
+  before_action :set_user, only: [:show, :update]
   before_action :authenticate_user!, only: :edit
 
   def show
@@ -8,12 +8,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    set_user.image.cache! unless set_user.image.blank?
   end
 
   def update
     if current_user.update(user_params)
-       redirect_to action: :show, notice: 'ユーザー情報を更新しました'
+       redirect_to user_path, notice: "ユーザー情報を更新しました"
     else
        render 'edit'
     end

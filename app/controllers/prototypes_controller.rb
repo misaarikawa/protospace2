@@ -17,7 +17,7 @@ class PrototypesController < ApplicationController
   def create
     @prototype = Prototype.new(prototype_params)
     if @prototype.save
-      redirect_to action: :index, notice: '新しいプロトタイプを登録しました'
+      redirect_to prototypes_path(@prototype), notice: "新しいプロトタイプを登録しました"
     else
       render 'new'
     end
