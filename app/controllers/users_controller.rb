@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: :show
+  before_action :set_user, only: [:show, :update]
   before_action :authenticate_user!, only: :edit
 
   def show
+    @prototypes = @user.prototypes
   end
 
   def edit
@@ -11,7 +12,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-       redirect_to action: :show, notice: 'ユーザー情報を更新しました'
+       redirect_to user_path, notice: "ユーザー情報を更新しました"
     else
        render 'edit'
     end

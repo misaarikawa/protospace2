@@ -12,8 +12,8 @@
         %input#user_remember_me{name: "user[remember_me]", type: "checkbox", value: "1"}/
         Remember me
     .actions
-    %input.btn.btn-lg.btn-primary.btn-block{name: "commit", type: "submit", value: "Sign in"}/
+      =f.submit "Sign in", name: "commit", class: "btn btn-lg btn-primary btn-block" 
   .text-center
     %p
       Not a member?
-      %a{href: "/users/sign_up", target: "_self"} Sign up now
+      =link_to "Sign up now", new_user_registration_path, target: "_self"
