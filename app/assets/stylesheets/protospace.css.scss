@@ -131,6 +131,7 @@ body {
 }
 
 .btn-group.open .dropdown-toggle {
+  position: relative;
   outline: 0;
   outline-offset: 0;
   box-shadow: none;
@@ -149,6 +150,27 @@ body {
   z-index: 2;
 }
 
+.dropdown-menu {
+  position: absolute;
+  top: 55px;
+  left: 10px;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
 
 
 /* -- Ripple effect -------------------------------- */
@@ -218,6 +240,20 @@ body {
 
 
 .btn-default {
+  border: 1px solid #eee;
+  &:hover {
+    border: 1px solid #eee;
+    background: #eee;
+  }
+}
+
+.btn-default-action {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+  position: relative;
+  top: 35px;
+  left: 10px;
   border: 1px solid #eee;
   &:hover {
     border: 1px solid #eee;
