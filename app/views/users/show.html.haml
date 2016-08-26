@@ -25,6 +25,13 @@
   .row
   - @prototypes.each do |prototype|
     .col-sm-4.col-md-3.proto-content
+      .dropdown.drop_menu_location
+        %button.btn.btn-default-action.dropdown-toggle{"aria-expanded": "false", "data-toggle": "dropdown",id: "dropdownMenu", type: "button"}Action
+        %ul.dropdown-menu{"aria-labelledby": "dropdownMenu1"}
+          %li
+            = link_to "Delete", prototype_path(prototype), method: "delete"
+          %li
+            = link_to "Edit", edit_prototype_path(prototype), method: "get" 
       .thumbnail
         %a{href: ""}
           = link_to image_tag(prototype.prototype_images.main[0].content, class: 'img-responsive'), prototype_path(prototype)
