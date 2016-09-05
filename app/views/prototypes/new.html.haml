@@ -8,25 +8,25 @@
       = f.fields_for :prototype_images do |prototype_images_form|
         .col-md-12
           .cover-image-upload
-            = prototype_images_form.file_field :content, value: "file"
+            = prototype_images_form.file_field :content
             = prototype_images_form.hidden_field :status, value: "main"
         .col-md-12
           %ul.proto-sub-list.list-group
             %li.list-group-item.col-md-4
               .image-upload
                 = f.fields_for :prototype_images do |prototype_images_form|
-                  = prototype_images_form.file_field :content, value: "file"
+                  = prototype_images_form.file_field :content
                   = prototype_images_form.hidden_field :status, value: "sub"
             %li.list-group-item.col-md-4
               .image-upload
                 = f.fields_for :prototype_images do |prototype_images_form|
-                  = prototype_images_form.file_field :content, value: "file"
+                  = prototype_images_form.file_field :content
                   = prototype_images_form.hidden_field :status, value: "sub"
             %li.list-group-item.col-md-4
               .image-upload-plus
                 %span +
                 = f.fields_for :prototype_images do |prototype_images_form|
-                  = prototype_images_form.file_field :content, value: "file"
+                  = prototype_images_form.file_field :content
                   = prototype_images_form.hidden_field :status, value: "sub"
       .row.proto-description
         .col-md-12
