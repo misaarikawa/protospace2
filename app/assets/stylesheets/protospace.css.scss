@@ -55,8 +55,6 @@ body {
   }
 }
 
-
-
 /* -- Buttons sizes -------------------------------- */
 .btn {
   min-width: 88px;
@@ -152,6 +150,8 @@ body {
 
 .dropdown-menu {
   position: absolute;
+  top: 55px;
+  left: 10px;
   z-index: 1000;
   display: none;
   float: left;
@@ -170,6 +170,11 @@ body {
   background-clip: padding-box;
 }
 
+.dropdown.drop_menu_location {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
 
 /* -- Ripple effect -------------------------------- */
 .ripple-effect {
@@ -249,9 +254,6 @@ body {
   color: #333;
   background-color: #fff;
   border-color: #ccc;
-  position: relative;
-  top: 35px;
-  left: 10px;
   border: 1px solid #eee;
   &:hover {
     border: 1px solid #eee;
@@ -658,4 +660,17 @@ body {
 .tag-project {
   height: 10px;
   text-align: center;
+}
+
+.likes-box {
+    float: right;
+    width: 268px;
+    margin: 0 -1px 15px 0;
+}
+
+.likes-box#like-button {
+    width: 110px;
+    height: 62px;
+    float: left;
+    margin-right: 10px;
 }
