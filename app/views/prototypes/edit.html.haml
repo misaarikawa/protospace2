@@ -3,7 +3,7 @@
     .col-md-8.col-md-offset-2
       %header.row.user-nav.row
         .col-md-12
-          = f.text_field :title, placeholder: "#{@prototype.title}"
+          = f.text_field :title, placeholder: "@prototype.title"
       .row
         .col-md-12
           = f.fields_for :prototype_images, @main_image do |prototype_images_form|
@@ -19,9 +19,9 @@
 
       .row.proto-description
         .col-md-12
-          = f.text_field :catch_copy, placeholder: "#{@prototype.catch_copy}"
+          = f.text_field :catch_copy, placeholder: "@prototype.catch_copy"
         .col-md-12
-          = f.text_field :concept, cols: "30", rows: "4", placeholder: "#{@prototype.concept}"
+          = f.text_field :concept, cols: "30", rows: "4", placeholder: "@prototype.concept"
         .col-md-12
           %h4 Tag List
           .row
