@@ -1,12 +1,13 @@
 class PrototypesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  before_action :set_prototype, only: :show
+  before_action :set_prototype, only: [:show, :destroy, :edit, :update]
 
   def index
     @prototypes = Prototype.all.includes(:prototype_images)
   end
 
-  def show	
+  def show
+     @sub_images = @prototype.prototype_images.sub 
   end
 
   def new
@@ -20,6 +21,25 @@ class PrototypesController < ApplicationController
       redirect_to prototypes_path(@prototype), notice: "新しいプロトタイプを登録しました"
     else
       render 'new'
+    end
+  end
+
+  def destroy
+    if @prototype.user_id == current_user.id
+      @prototype.destroy
+      redirect_to :root, notice: "プロトタイプを削除しました"
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @prototype.user_id == current_user.id
+      @prototype.update(prototype_params)
+      redirect_to :root, notice: "プロトタイプを更新しました"
+    else
+      render 'edit'
     end
   end
 

@@ -55,8 +55,6 @@ body {
   }
 }
 
-
-
 /* -- Buttons sizes -------------------------------- */
 .btn {
   min-width: 88px;
@@ -131,6 +129,7 @@ body {
 }
 
 .btn-group.open .dropdown-toggle {
+  position: relative;
   outline: 0;
   outline-offset: 0;
   box-shadow: none;
@@ -149,7 +148,33 @@ body {
   z-index: 2;
 }
 
+.dropdown-menu {
+  position: absolute;
+  top: 55px;
+  left: 10px;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
 
+.dropdown.drop_menu_location {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
 
 /* -- Ripple effect -------------------------------- */
 .ripple-effect {
@@ -218,6 +243,17 @@ body {
 
 
 .btn-default {
+  border: 1px solid #eee;
+  &:hover {
+    border: 1px solid #eee;
+    background: #eee;
+  }
+}
+
+.btn-default-action {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
   border: 1px solid #eee;
   &:hover {
     border: 1px solid #eee;
@@ -624,4 +660,17 @@ body {
 .tag-project {
   height: 10px;
   text-align: center;
+}
+
+.likes-box {
+    float: right;
+    width: 268px;
+    margin: 0 -1px 15px 0;
+}
+
+.likes-box#like-button {
+    width: 110px;
+    height: 62px;
+    float: left;
+    margin-right: 10px;
 }
