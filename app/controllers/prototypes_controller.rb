@@ -7,7 +7,10 @@ class PrototypesController < ApplicationController
   end
 
   def show
-     @sub_images = @prototype.prototype_images.sub 
+    @comment = Comment.new
+    @comments = @prototype.comments.includes(:user)
+    @like = @prototype.likes.find_by(user_id: current_user.id)
+    @sub_images = @prototype.prototype_images.sub
   end
 
   def new
@@ -32,11 +35,12 @@ class PrototypesController < ApplicationController
   end
 
   def edit
+    @main_image = @prototype.prototype_images.main.first
+    @sub_images = @prototype.set_sub_thumbnails
   end
 
   def update
-    if @prototype.user_id == current_user.id
-      @prototype.update(prototype_params)
+    if  @prototype.update(prototype_params)
       redirect_to :root, notice: "プロトタイプを更新しました"
     else
       render 'edit'

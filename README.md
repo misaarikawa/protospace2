@@ -63,7 +63,7 @@ likes
 |:-------|:---  
 |user_id|:integer  
 |prototype_id|:integer  
-|content|:text  
+|article|:text  
 
 |likes|type  
 |:----|----  

@@ -1,0 +1,8 @@
+.media
+  .media-left
+    = image_tag comment.user.image, class: "media-object", alt: "64x64", "data-holder-rendered": "true", "data-src": "holder.js/64x64", style: "width: 64px; height: 64px;"
+  .media-body
+    .media-heading
+      = comment.user.name
+    %p
+      = comment.article
