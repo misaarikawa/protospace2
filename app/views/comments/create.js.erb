@@ -2,3 +2,6 @@ $('#comment_field').val('');
 $('#comment_list').html(
   '<%= j(render partial: 'comments/comment', collection: @comments) %>'
 );
+$('#comment_count').html(
+  '(<%= @prototype.comments.count %>)'
+);
