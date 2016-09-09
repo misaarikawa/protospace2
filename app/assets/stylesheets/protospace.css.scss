@@ -55,12 +55,6 @@ body {
   }
 }
 
-.drop_menu_location {
-    position: absolute;
-    top: 10px;
-    left: 25px;
-}
-
 /* -- Buttons sizes -------------------------------- */
 .btn {
   min-width: 88px;
@@ -176,6 +170,11 @@ body {
   background-clip: padding-box;
 }
 
+.dropdown.drop_menu_location {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
 
 /* -- Ripple effect -------------------------------- */
 .ripple-effect {
