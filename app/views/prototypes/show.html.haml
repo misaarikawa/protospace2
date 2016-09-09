@@ -36,17 +36,22 @@
       %h4 Tag List
       %ul.proto-tag-list.list-inline
         %li
-          
-  .row.proto-comments
-    #comment_list
-      = render @comments
 
-    .col-md-8
-      .form-inline{role: "form"}
-        %h4 Write a comment
-        .row
-          %div.form-group.col-md-10
-            = form_for [@prototype, @comment], remote: true do |f|
-              = f.text_area :article, id: "comment_field", placeholder: "Your comments"
-              = f.hidden_field :user_id, value: current_user.id
-              = f.submit :comment, class: "btn btn-primary"
+  %h4.col-md-12
+    Comments
+    %span.num#comment_count
+      (#{@prototype.comments.count})
+
+    .row.proto-comments
+      #comment_list
+        = render @comments
+
+      .col-md-8
+        .form-inline{role: "form"}
+          %h4 Write a comment
+          .row
+            %div.form-group.col-md-10
+              = form_for [@prototype, @comment], remote: true do |f|
+                = f.text_area :article, id: "comment_field", placeholder: "Your comments"
+                = f.hidden_field :user_id, value: current_user.id
+                = f.submit :comment, class: "btn btn-primary"

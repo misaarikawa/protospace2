@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(version: 20160831054911) do
     t.string   "title",       limit: 255
     t.string   "catch_copy",  limit: 255
     t.text     "concept",     limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.integer  "likes_count", limit: 4
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "likes_count", limit: 4,     default: 0
   end
 
   create_table "users", force: :cascade do |t|
