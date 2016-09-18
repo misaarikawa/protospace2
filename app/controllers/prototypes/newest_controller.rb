@@ -1,5 +1,5 @@
 class Prototypes::NewestController < ApplicationController
   def index
-    @prototypes = Prototype.order("created_at DESC").includes(:prototype_images)
+    @prototypes = Prototype.includes(:prototype_images).order("created_at DESC")
   end
 end
