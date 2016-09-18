@@ -1,5 +1,5 @@
 class Prototypes::PopularController < ApplicationController
   def index
-    @prototypes = Prototype.order(likes_count: :desc)
+    @prototypes = Prototype.includes(:prototype_images).order(likes_count: :desc)
   end
 end
