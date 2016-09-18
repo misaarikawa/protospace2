@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'prototypes/popular#index#index'
+  root 'prototypes/popular#index'
 
   devise_for :users
   resources :users, only: [:show, :edit, :update]
