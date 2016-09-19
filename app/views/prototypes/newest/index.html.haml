@@ -5,15 +5,15 @@
   .container
     .row
       %ul.nav.nav-pills.col-lg-11
-        %li.active{role: "presentation"}
-          = link_to "Popular PROTO", popular_index_path, method: "get"
         %li{role: "presentation"}
+          = link_to "Popular PROTO", popular_index_path, method: "get"
+        %li.active{role: "presentation"}
           = link_to "Newest PROTO", newest_index_path, method: "get"
       %button{type: "button", class: "btn btn-default col-lg-1"} View Tags
 
 .container.proto-list
   .row
-    = render @prototypes
+    = render partial: 'prototypes/prototype', collection: @prototypes
 .text-center
   %ul.pagination
     %li.disabled
