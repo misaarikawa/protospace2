@@ -21,6 +21,6 @@ class Prototype < ActiveRecord::Base
       sub_images
   end
 
-  acts_as_taggable_on :tags
   acts_as_taggable
+  
 end
