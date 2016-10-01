@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     resources :popular, only: :index
     resources :newest, only: :index
   end
+  resources :tags, only: [:index, :show], param: :tag_name
 end

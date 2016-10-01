@@ -20,4 +20,7 @@ class Prototype < ActiveRecord::Base
     MAXMUN_IMAGE_NUM.times { |i| sub_images[i] ||= prototype_images.build(status: "sub") }
       sub_images
   end
+
+  acts_as_taggable
+  
 end

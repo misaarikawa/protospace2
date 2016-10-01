@@ -4,6 +4,7 @@ class PrototypesController < ApplicationController
 
   def index
     @prototypes = Prototype.all.includes(:prototype_images)
+    @tags = ActsAsTaggableOn::Tag.all
   end
 
   def show
@@ -20,6 +21,7 @@ class PrototypesController < ApplicationController
 
   def create
     @prototype = Prototype.new(prototype_params)
+    binding.pry
     if @prototype.save
       redirect_to prototypes_path(@prototype), notice: "新しいプロトタイプを登録しました"
     else
@@ -49,7 +51,7 @@ class PrototypesController < ApplicationController
 
   private
   def prototype_params
-    params.require(:prototype).permit(:title, :catch_copy, :concept, prototype_images_attributes: [:id, :content, :status, :_destroy]).merge(user_id: current_user.id)
+    params.require(:prototype).permit(:title, :catch_copy, :concept, prototype_images_attributes: [:id, :content, :status, :_destroy]).merge(user_id: current_user.id, tag_list: params[:prototype][:tag_list])
   end
 
   def set_prototype
